@@ -21,7 +21,7 @@ con = {
     con1= {
 
         name                  = "kadir-dev-container"
-        storage_account_name  = "kadir-dev-storage"
+        storage_account_name  = "kadirdevstorage"
        container_access_type = "private"
     }
 }
