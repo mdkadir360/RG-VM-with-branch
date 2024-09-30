@@ -1,6 +1,6 @@
 rgs = {
   rg1 = {
-    name     = "kadir-dev-rg"
+    name     = "kadir-test-rg"
     location = "east us"
   }
 
@@ -9,8 +9,8 @@ storage = {
 
     storage1={
 
-         name                     = "kadir-dev-storage"
-  resource_group_name      = "kadir-dev-rg"
+         name                     = "kadir-test-storage"
+  resource_group_name      = "kadir-test-rg"
   location                 = "east us"
   account_tier             = "Standard"
   account_replication_type = "LRS"
@@ -20,8 +20,8 @@ storage = {
 con = {
     con1= {
 
-        name                  = "kadir-dev-container"
-        storage_account_name  = "kadir-dev-storage"
+        name                  = "kadir-test-container"
+        storage_account_name  = "kadir-test-storage"
        container_access_type = "private"
     }
 }
@@ -30,25 +30,25 @@ con = {
 
 vnet = {
   vnet1 = {
-    name                = "kadir-dev-vnet"
+    name                = "kadir-test-vnet"
     address_space       = ["10.0.0.0/16"]
     location            = "east us"
-    resource_group_name = "kadir-dev-rg"
+    resource_group_name = "kadir-test-rg"
   }
  
 }
 subnet = {
   subnet1 = {
-    name                 = "kadir-dev-subnet"
-    resource_group_name  = "kadir-dev-rg"
-    virtual_network_name = "kadir-dev-vnet"
+    name                 = "kadir-test-subnet"
+    resource_group_name  = "kadir-test-rg"
+    virtual_network_name = "kadir-test-vnet"
     address_prefixes     = ["10.0.1.0/24"]
   }
 }
 pip = {
     pip1 = {
-      name                = "frontend-devpip1"
-      resource_group_name = "kadir-dev-rg"
+      name                = "frontend-testpip1"
+      resource_group_name = "kadir-test-rg"
       location            = "east us"
       allocation_method   = "Static"
   sku                 = "Basic"
@@ -56,19 +56,19 @@ pip = {
 }
 nic = {
   nic1 = {
-    name                 = "frontend-devnic1"
+    name                 = "frontend-testnic1"
     location             = "east us"
-    resource_group_name  = "kadir-dev-rg"
-    virtual_network_name = "kadir-dev-vnet"
-    subnetname           = "kadir-dev-subnet"
-     ipname               = "frontend-devpip1"
+    resource_group_name  = "kadir-test-rg"
+    virtual_network_name = "kadir-test-vnet"
+    subnetname           = "kadir-test-subnet"
+     ipname               = "frontend-testpip1"
   }
 }
 nsg = {
   nsg1 = {
-    name                = "nsgdevrule"
+    name                = "nsgtestrule"
     location            = "east us"
-    resource_group_name = "kadir-dev-rg"
+    resource_group_name = "kadir-test-rg"
   }
   
 }
@@ -103,20 +103,20 @@ security = {
 
 associationm = {
   association1 = {
-    name                 = "kadirdevnsg"
-    nsgname              = "nsgdevrule"
-    resource_group_name  = "kadir-dev-rg"
-    subnatname           = "kadir-dev-subnet"
-    virtual_network_name = "kadir-dev-vnet"
+    name                 = "kadirtestnsg"
+    nsgname              = "nsgtestrule"
+    resource_group_name  = "kadir-test-rg"
+    subnatname           = "kadir-test-subnet"
+    virtual_network_name = "kadir-test-vnet"
 
   }
 }
 
 vm = {
   vm01 = {
-    name                = "kadirfrontend-devvm1"
+    name                = "kadirfrontend-testvm1"
     location            = "east us"
-    resource_group_name = "kadir-dev-rg"
-    nicname             = "frontend-devnic1"
+    resource_group_name = "kadir-test-rg"
+    nicname             = "frontend-testnic1"
   }
 }
