@@ -45,7 +45,7 @@ module "nsg" {
 }
 
 module "nsgass" {
-  source      = "github.com/mdkadir360/Terraform-env-gitops/tree/main/9.NSG_ASSOCIATION"
+  source      = "github.com/mdkadir360/Terraform_Module_for_Branch//9.NSG_ASSOCIATION"
   association = var.associationm
   depends_on  = [module.nsg, module.subnet]
 }
