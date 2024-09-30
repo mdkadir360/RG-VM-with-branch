@@ -1,0 +1,11 @@
+variable "rgs" {}
+variable "storage" {}
+variable "con" {}
+variable "vnet" {}
+variable "subnet" {}
+variable "pip" {}
+variable "nic" {}
+variable "nsg" {}
+variable "security" {}
+variable "associationm" {}
+variable "vm" {}
