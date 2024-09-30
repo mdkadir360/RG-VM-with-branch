@@ -9,7 +9,7 @@ storage = {
 
     storage1={
 
-         name                     = "kadir-dev-storage"
+         name                     = "kadirdevstorage"
   resource_group_name      = "kadir-dev-rg"
   location                 = "east us"
   account_tier             = "Standard"
