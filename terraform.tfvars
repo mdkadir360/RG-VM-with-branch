@@ -61,7 +61,7 @@ nic = {
     resource_group_name  = "kadir-dev-rg"
     virtual_network_name = "kadir-dev-vnet"
     subnetname           = "kadir-dev-subnet"
-     ipname               = "frontend-devpip1"
+     pipname               = "frontend-devpip1"
   }
 }
 nsg = {
