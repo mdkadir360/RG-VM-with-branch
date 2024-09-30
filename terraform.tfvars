@@ -1,76 +1,76 @@
 rgs = {
   rg1 = {
-    name     = "kadir-dev-rg"
+    name     = "kadir-prod-rg"
     location = "east us"
   }
 
 }
 storage = {
 
-    storage1={
+  storage1 = {
 
-         name                     = "kadir-dev-storage"
-  resource_group_name      = "kadir-dev-rg"
-  location                 = "east us"
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-    }
+    name                     = "kadir-prod-storage"
+    resource_group_name      = "kadir-prod-rg"
+    location                 = "east us"
+    account_tier             = "Standard"
+    account_replication_type = "LRS"
+  }
 }
 
 con = {
-    con1= {
+  con1 = {
 
-        name                  = "kadir-dev-container"
-        storage_account_name  = "kadir-dev-storage"
-       container_access_type = "private"
-    }
+    name                  = "kadir-prod-container"
+    storage_account_name  = "kadir-prod-storage"
+    container_access_type = "private"
+  }
 }
 
 
 
 vnet = {
   vnet1 = {
-    name                = "kadir-dev-vnet"
+    name                = "kadir-prod-vnet"
     address_space       = ["10.0.0.0/16"]
     location            = "east us"
-    resource_group_name = "kadir-dev-rg"
+    resource_group_name = "kadir-prod-rg"
   }
- 
+
 }
 subnet = {
   subnet1 = {
-    name                 = "kadir-dev-subnet"
-    resource_group_name  = "kadir-dev-rg"
-    virtual_network_name = "kadir-dev-vnet"
+    name                 = "kadir-prod-subnet"
+    resource_group_name  = "kadir-prod-rg"
+    virtual_network_name = "kadir-prod-vnet"
     address_prefixes     = ["10.0.1.0/24"]
   }
 }
 pip = {
-    pip1 = {
-      name                = "frontend-devpip1"
-      resource_group_name = "kadir-dev-rg"
-      location            = "east us"
-      allocation_method   = "Static"
-  sku                 = "Basic"
-    }
+  pip1 = {
+    name                = "frontend-prodpip1"
+    resource_group_name = "kadir-prod-rg"
+    location            = "east us"
+    allocation_method   = "Static"
+    sku                 = "Basic"
+  }
 }
 nic = {
   nic1 = {
-    name                 = "frontend-devnic1"
+    name                 = "frontend-prodnic1"
     location             = "east us"
-    resource_group_name  = "kadir-dev-rg"
-    virtual_network_name = "kadir-dev-vnet"
-    subnetname           = "kadir-dev-subnet"
-     ipname               = "frontend-devpip1"
+    resource_group_name  = "kadir-prod-rg"
+    virtual_network_name = "kadir-prod-vnet"
+    subnetname           = "kadir-prod-subnet"
+    ipname               = "frontend-prodpip1"
   }
 }
 nsg = {
   nsg1 = {
-    name                = "nsgdevrule"
+    name                = "nsgprodrule"
     location            = "east us"
-    resource_group_name = "kadir-dev-rg"
+    resource_group_name = "kadir-prod-rg"
   }
-  
+
 }
 
 security = {
@@ -103,20 +103,20 @@ security = {
 
 associationm = {
   association1 = {
-    name                 = "kadirdevnsg"
-    nsgname              = "nsgdevrule"
-    resource_group_name  = "kadir-dev-rg"
-    subnatname           = "kadir-dev-subnet"
-    virtual_network_name = "kadir-dev-vnet"
+    name                 = "kadirprodnsg"
+    nsgname              = "nsgprodrule"
+    resource_group_name  = "kadir-prod-rg"
+    subnatname           = "kadir-prod-subnet"
+    virtual_network_name = "kadir-prod-vnet"
 
   }
 }
 
 vm = {
   vm01 = {
-    name                = "kadirfrontend-devvm1"
+    name                = "kadirfrontend-prodvm1"
     location            = "east us"
-    resource_group_name = "kadir-dev-rg"
-    nicname             = "frontend-devnic1"
+    resource_group_name = "kadir-prod-rg"
+    nicname             = "frontend-prodnic1"
   }
 }
