@@ -1,6 +1,6 @@
 module "Rg" {
   source = "github.com/mdkadir360/Terraform_Module_for_Branch//1.RG"
-  rgs    = var.rg
+  rgs    = var.rgs
 }
 
 module "Storage" {
