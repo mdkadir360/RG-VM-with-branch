@@ -20,9 +20,9 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: 0ad46259-baae-44b7-85c8-e51ac8ddc49e
-          tenant-id: fa0f865c-7089-4b77-8d85-40eba1b81f1f
-          subscription-id: 7b14aa4f-2974-4cef-ade6-15c62d590d01
+          client-id: d8e198cc-6b95-43aa-9ed6-86ddf9a5ff9c
+          tenant-id: 612e50e3-aac1-45e7-97a6-221773393f77
+          subscription-id: efaf257c-1149-4a6f-b413-fd403a3c5e58
 
       - name: Azure CLI Command
         run: |
